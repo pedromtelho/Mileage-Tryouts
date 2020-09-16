@@ -1,0 +1,66 @@
+{% extends "index.html" %}
+{% block content %}
+
+<section>
+    <div class="container justify-center-table">
+        <h1>Informações Gerais</h1>
+        <table class="table table-bordered table-striped text-center center">
+            <thead>
+                <tr>
+                    <th class="text-center" scope="col">
+                        Marca
+                    </th>
+
+
+                    <th class="text-center" scope="col">
+                        Modelo
+                    </th>
+
+
+                    <th class="text-center" scope="col">
+                        Motor
+                    </th>
+
+
+                    <th class="text-center" scope="col">
+                        Ano
+                    </th>
+
+
+                    <th class="text-center" scope="col">
+                        Preço
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for car in infos %}
+                <tr>
+                    <td>
+                        {{car['marca']}}
+                    </td>
+
+                    <td>
+                        {{car['modelo']}}
+                    </td>
+
+                    <td>
+                        {{car['motor']}}
+                    </td>
+
+                    <td>
+                        {{car['ano']}}
+                    </td>
+
+                    <td>
+                        {{car['preco']}}
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock %}

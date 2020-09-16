@@ -1,0 +1,116 @@
+{% extends "index.html" %}
+{% block content %}
+
+<section>
+    <div class="container justify-center-table">
+        <h1>Filtrar modelo</h1>
+        <br>
+        <form method="POST">
+            <div class="row">
+                <div class="col">
+                    <p>Motor</p>
+                    <input id="engine" name="engine" type="text" class="form-control"
+                        placeholder="Digite o tipo do motor">
+                </div>
+
+                <div class="col">
+                    <p>Ano</p>
+                    <input id="year" name="year" type="text" class="form-control" placeholder="Digite o ano">
+                </div>
+            </div>
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="submit" class="btn btn-outline-dark">Filtrar</button></div>
+                </div>
+            </div>
+            <br>
+        </form>
+
+        <table class="table table-bordered table-striped text-center center">
+            <thead>
+                <tr>
+                    <th class="text-center" scope="col">
+                        Marca
+                    </th>
+
+
+                    <th class="text-center" scope="col">
+                        Modelo
+                    </th>
+
+
+                    <th class="text-center" scope="col">
+                        Motor
+                    </th>
+
+
+                    <th class="text-center" scope="col">
+                        Ano
+                    </th>
+
+
+                    <th class="text-center" scope="col">
+                        Preço
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% if filtered %}
+                {% for car in filt_cars %}
+                <tr>
+                    <td>
+                        {{car['marca']}}
+                    </td>
+
+                    <td>
+                        {{car['modelo']}}
+                    </td>
+
+                    <td>
+                        {{car['motor']}}
+                    </td>
+
+                    <td>
+                        {{car['ano']}}
+                    </td>
+
+                    <td>
+                        {{car['preco']}}
+                    </td>
+                </tr>
+                {% endfor %}
+                {% else %}
+                {% for car in infos %}
+                <tr>
+                    <td>
+                        {{car['marca']}}
+                    </td>
+
+                    <td>
+                        {{car['modelo']}}
+                    </td>
+
+                    <td>
+                        {{car['motor']}}
+                    </td>
+
+                    <td>
+                        {{car['ano']}}
+                    </td>
+
+                    <td>
+                        {{car['preco']}}
+                    </td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock %}

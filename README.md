@@ -7,8 +7,13 @@ python3 app.py
 ```
 
 ### Rotas:
-'/generalInformations': retorna as informações de todos os carros;<br>
-'/filter': filtra algum carro; <br>
-'/changeEngine': troca o motor do carro;<br>
-'/remove': remove algum modelo;<br>
-'/addNewModel': adiciona novo modelo a lista. 
+#### /generalInformations: 
+retorna as informações de todos os carros;<br>
+#### /filter: 
+filtra algum carro; <br>
+#### /changeEngine: 
+troca o motor do carro;<br>
+#### /remove: 
+remove algum modelo;<br>
+#### /addNewModel: 
+adiciona novo modelo a lista. 
